@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 
@@ -9,6 +11,8 @@
   height: 150px;
   padding: 20px;
   color: white;
+  display: flex;
+  justify-content: space-between;
 }
 
 .AppIntro {
@@ -20,3 +24,11 @@
   height: 80px;
 }
 
+
+.grid {
+	display: flex;
+	justify-content: space-between;
+}
+.column{
+	width: 25%;
+}
