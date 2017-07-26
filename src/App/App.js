@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
 import styles from './App.css';
 import questions from './questions.js';
+
 import Column from './components/Column.js'
 
 

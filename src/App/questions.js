@@ -4,7 +4,7 @@ const questions = [
     "questions": [
       {
         "points": 100,
-        "question": "<p>What part of your application does React focus on?</p><ol><li>The Model</li><li>The View</li><li>The Controller</li><li>All of the above</li></ol>",
+        "question": "What part of your application does React focus on? A.The Model B.The View C.The Controller D.All of the above",
         "answer": "B. The View"
       },
       {
@@ -29,7 +29,7 @@ const questions = [
     "questions": [
       {
         "points": 100,
-        "question": "<p>Where can you define a component's initial state when you use the ES6 Class syntax?</p><ol><li>getInitialState()</li><li>getInitialProps()</li><li>The component's constructor</li></ol>",
+        "question": "Where can you define a component's initial state when you use the ES6 Class syntax? A. getInitialState() B.getInitialProps() C.The component's constructor",
         "answer": "C. The component's constructor"
       },
       {
@@ -39,7 +39,7 @@ const questions = [
       },
       {
         "points": 300,
-        "question": "<p>Which lifecycle function should you use to set default property values?</p><ol><li>getInitialState</li><li>getInitialProps</li><li>getDefaultProps</li></ol>",
+        "question": "Which lifecycle function should you use to set default property values? A.getInitialState B.getInitialProps C.getDefaultProps",
         "answer": "C. getDefaultProps"
       },
       {
@@ -54,13 +54,13 @@ const questions = [
     "questions": [
       {
         "points": 100,
-        "question": "<p>Constants (const) are:</p><ol><li>Block scoped</li><li>Function scoped</li><li>Global</li></ol>",
+        "question": "Constants (const) are: A.Block scoped B.Function scoped C.Global",
         "answer": "A. Block scoped"
       },
       {
         "points": 200,
         "question": "Name 3 new collection classes in ES2015",
-        "answer": "<ul><li>Map</li><li>WeakMap</li><li>Set</li><li>WeakSet</li></ul>"
+        "answer": "1.Map 2.WeakMap 3.Set 4.WeakSet"
       },
       {
         "points": 300,

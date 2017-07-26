@@ -1,0 +1,44 @@
+.card {
+	padding: 7vh;
+	border: 1px solid red;
+	font-size: 20px;
+	margin: 2.2vh 0;
+}
+
+.points {
+	width: 100%;
+}
+
+.question {
+	display: none;
+}
+
+.answer {
+	display: none;
+}
+.modal {
+	position: fixed;
+	top: 190px;
+	left: 20vw;
+	bottom: 190px;
+	right: 20vw;
+	border: 1px solid blue;
+	transform: scale(1.5);
+	transition: all 1s ease-in;
+	background: white;
+	/*color: black;*/
+}
+.modal p {
+	opacity: 1;
+	color: red;
+}
+.modal.hidden {
+  	/*display: none;*/
+  	/*opacity: 0;*/
+	color: blue;
+  	position: fixed;
+}
+
+.modal .overlay{
+	background: black;
+}
