@@ -1,22 +1,21 @@
 import React, { Component } from 'react';
-import styles from './App.css';
-import questions from './questions.js';
-
 import Column from './components/Column.js'
-
-
+import questions from './questions.js';
+import styles from './App.css';
 
 class App extends Component {
     render() {
         return (
             <div className={styles.App}>
                 <div className={styles.grid}>
-                    {questions.map(section => {
-                        // console.log(row)
+                    {questions.map((section, sectionIndex) => {
+                        //map over every available category/section
                         return (
-                            <div className={styles.column}>
+                            //header
+                            //column of available cards
+                            <div className={styles.column} key={sectionIndex}>
                                     <h2>{section.category}</h2> {/*HEADER*/}
-                                    <Column cards = {section.questions} />
+                                    <Column cards={section.questions} sectionIndex={sectionIndex}/>
                             </div>)
                     })}
                 </div>
@@ -24,11 +23,4 @@ class App extends Component {
         );
     }
 }
-
 export default App;
-
-
-// {row.questions.map(question => {
-//     console.log(question.points)
-//     // return (<p>{question.points}</p>)
-// })}

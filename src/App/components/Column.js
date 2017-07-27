@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import styles from './Column.css';
-
+import Card from './Card.js'
+import ExpandCard from './ExpandCard.js';
 //Header
 //Column data
 // each card content: 
     // Points
     // Question (Show when clicked)
     // Answer (Show when clicked again)
-
 
 export default class Column extends Component {
 	constructor() {
@@ -18,55 +18,52 @@ export default class Column extends Component {
 			activeCard: {}
 		}
 		this.grabActiveCard = this.grabActiveCard.bind(this);
-		// this.closeActivePost = this.closeActivePost.bind(this);
+		this.flipCard = this.flipCard.bind(this);
 	}
-
 	grabActiveCard(content) {
 		this.setState ({
 			cardShow: true,
 			activeCard: content,
 		})
-
-
+	}
+	flipCard() {
+		if (this.state.flipped) {
+			this.setState ({
+				cardShow: false,
+			})
+		}
+		this.setState({
+			flipped: !this.state.flipped
+		})
 	}
     render() {
-    	const className = this.state.cardShow ? styles.modal : styles.modal.hidden;
-    	const expandCard = () => {
-    		// if (this.state.cardShow) {
-    			console.log(this.state.activeCard.question)
-    			return (
-    				<div className={className}>
-    					<div className="overlay"></div>
-
-    					<div className="bigCard question"> 
-    						<p>{this.state.activeCard.question}</p>
-    					</div>
-
-    					<div className="bigCard answer"> 
-    						<p>{this.state.activeCard.answer}</p>
-    					</div>
-    				</div>
-    			)
-    		// } 
-    	}
-
+    	// easy reference for props
         let cards = this.props.cards;
-        console.log(cards);
-        let rows = [];        
-        if (cards) {
-            cards.map(question => {
-                rows.push(
-                	<div className={styles.card} onClick={()=>this.grabActiveCard(question)}>
-	                	<p className={styles.points}>{question.points}</p>
-	                	<p className={styles.question}>{question.question}</p>
-						<p className={styles.answer}>{question.answer}</p>
-                	</div>)
-            })
-        }  
-        return <div className="content">
-        	{expandCard()}
-        	{rows}
-        	</div>
+        let sectionIndex = this.props.sectionIndex
+        let columns = [];        
 
+        if (cards) {
+            cards.map((question, questionIndex) => {
+            	// pushing individual cards into columns
+                columns.push (
+                	<Card grabActiveCard={this.grabActiveCard}
+                	question={question}
+                	questionIndex={questionIndex}
+                	sectionIndex={sectionIndex} />
+                )
+            })
+        }
+
+        return (
+	    	<div className="content">
+	        	<ExpandCard cardShow ={this.state.cardShow} 
+	        		activeCard = {this.state.activeCard}
+	        		flipCard = {this.flipCard}
+	        		flipped = {this.state.flipped}/>
+	        	{columns}
+			</div>
+		)
     }
 }
+
+
